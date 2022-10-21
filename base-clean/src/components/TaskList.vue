@@ -1,6 +1,6 @@
 <template>
   <main>
-  <nav class="filter" style="align-items: center ;">
+  <nav class="filter" style="align-content: center ;">
     <button @click="filter='all'">Todas as tarefas</button>
     <button @click="filter='isCompleted'">Completas</button>
     <button @click="filter='isIncomplete'">Incompletas</button>

@@ -57,6 +57,10 @@ export const useTaskStore = defineStore('taskStore', {
 
         canEdit(){
             this.activateEdit()
+        },
+
+        getTask(id){
+            return this.tasks.find(t => t.id == id)
         }
     }
 })

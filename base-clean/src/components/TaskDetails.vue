@@ -1,28 +1,16 @@
 <template>
     <div class="task">
         <input v-model = task.title type="text" :disabled="task.disabled">
-        <div class="icons">
-        <i 
-            class="material-symbols-outlined"
-            @click="task.disabled = !task.disabled"
-        >edit</i>
-        <i 
-            class="material-symbols-outlined"
-            :class="{ disable: task.isComp}"
-            @click="taskStore.deleteTask(task.id)"
-        >delete</i>
-        <i 
-        class="material-symbols-outlined"
-        :class="{active:task.isComp}"
-        @click="taskStore.toggleComplete(task.id)"
-        >check_circle</i>
-        </div>
+        <RouterLink :to="{name: 'Details', params:{id: task.id}}">
+        Detalhes
+        </RouterLink>
     </div>
 </template>
 
 <script>
 import { useTaskStore } from '../stores/TaskStore';
 import {ref} from 'vue'
+import {RouterLink} from 'vue-router'
 
     export default {
         props:['task'],
@@ -41,6 +29,14 @@ import {ref} from 'vue'
 .disable{
    cursor: not-allowed;
    pointer-events: none;
+   color:red;
 }
+
+.isActive{
+    color:goldenrod;
+}
+
+.material-symbols-outlined { font-size: 24px; }
+
 
 </style>
