@@ -1,10 +1,13 @@
 <template>
   <main>
-  <nav class="filter">
+  <nav class="filter" style="align-items: center ;">
     <button @click="filter='all'">Todas as tarefas</button>
     <button @click="filter='isCompleted'">Completas</button>
     <button @click="filter='isIncomplete'">Incompletas</button>
   </nav>
+  <div>
+  <TaskForm></TaskForm>
+  </div>
 
     <div class="task-list" v-if="this.filter === 'all'">
       <p>Todas as tarefas</p>
