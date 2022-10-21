@@ -1,6 +1,8 @@
 <template>
     <div>
-        <h1>{{this.getTask($route.params.id)}}</h1>
+        <header>
+            <h1>Exercício Revisões</h1>
+        </header>
 
         <div class="task">
         <input v-model = task.title type="text" :disabled="task.disabled">
@@ -24,6 +26,9 @@
         >check_circle</i>
         </div>
         </div>
+        <RouterLink :to="{name: 'Home'}">
+        <button>Voltar</button>
+        </RouterLink>
 
 
     </div>
@@ -32,6 +37,7 @@
 <script>
 import { mapActions } from 'pinia';
 import { useTaskStore } from '../stores/TaskStore';
+import {RouterLink} from 'vue-router'
 
     export default {
 
@@ -54,6 +60,11 @@ import { useTaskStore } from '../stores/TaskStore';
 </script>
 
 <style scoped>
+.task{
+    width:640px;
+    margin:10px auto;
+    text-align: right;
+}
 
 .disable{
    cursor: not-allowed;

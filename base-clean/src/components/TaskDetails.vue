@@ -2,7 +2,7 @@
     <div class="task">
         <input v-model = task.title type="text" :disabled="task.disabled">
         <RouterLink :to="{name: 'Details', params:{id: task.id}}">
-        Detalhes
+        <button>Detalhes</button>
         </RouterLink>
     </div>
 </template>
@@ -25,6 +25,7 @@ import {RouterLink} from 'vue-router'
 </script>
 
 <style scoped>
+
 
 .disable{
    cursor: not-allowed;
